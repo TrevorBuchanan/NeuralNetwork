@@ -1,7 +1,7 @@
 import pygame
 
 import utility
-from colors import WHITE
+from colors import WHITE, LIGHTER_GRAY
 from settings import SCREEN, BORDER
 
 
@@ -14,7 +14,7 @@ class Function:
     def graph_func(self):
         for i in range(len(self.points)):
             if i + 1 != len(self.points):
-                pygame.draw.line(SCREEN, WHITE, self.points[i], self.points[i + 1], 3)
+                pygame.draw.line(SCREEN, LIGHTER_GRAY, self.points[i], self.points[i + 1], 5)
 
     def linear_func_points(self, m, b):
         m = -1 * m
