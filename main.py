@@ -1,5 +1,7 @@
 import pygame
+import pygame_widgets
 
+from Visualization.auto_visualization import AutoVisualization
 from Visualization.settings import FPS
 from Visualization.manual_visualization import ManualVisualization
 
@@ -8,6 +10,7 @@ if __name__ == '__main__':
     clock = pygame.time.Clock()
 
     manual_visualization = ManualVisualization(200)
+    # auto_visualization = AutoVisualization(200, [2, 5, 5, 5, 2])
 
     # Screen window loop
     running = True
@@ -23,8 +26,10 @@ if __name__ == '__main__':
                 pygame.quit()
                 quit()
 
-        manual_visualization.draw_visualization(events)
+        manual_visualization.draw_visualization()
+        # auto_visualization.draw_visualization()
 
+        pygame_widgets.update(events)
         pygame.display.update()
 
 pygame.quit()
