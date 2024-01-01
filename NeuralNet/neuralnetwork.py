@@ -17,6 +17,19 @@ class NeuralNet:
         # Modified for input size
         return inputs[0] / BORDER.width, inputs[1] / BORDER.height
 
+    @staticmethod
+    def create_layers(layer_sizes):
+        """
+        Creates layers according to layer sizes
+        :param layer_sizes: List of integers defining the layer sizes
+        :return: A List of Layers
+        """
+        layers = []
+        # Loop through layers and add layer to layers list
+        for i in range(len(layer_sizes) - 1):
+            layers.append(Layer(layer_sizes[i], layer_sizes[i + 1]))
+        return layers
+
     def get_outputs(self, inputs):
         """
         Runs inputs through all layers in the neural network
@@ -30,16 +43,3 @@ class NeuralNet:
         else:
             raise Exception("Incorrectly sized input for neural network")
         return inputs
-
-    @staticmethod
-    def create_layers(layer_sizes):
-        """
-        Creates layers according to layer sizes
-        :param layer_sizes: List of integers defining the layer sizes
-        :return: A List of Layers
-        """
-        layers = []
-        # Loop through layers and add layer to layers list
-        for i in range(len(layer_sizes) - 1):
-            layers.append(Layer(layer_sizes[i], layer_sizes[i + 1]))
-        return layers
