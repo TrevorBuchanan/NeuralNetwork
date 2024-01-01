@@ -1,6 +1,6 @@
 import pygame
 
-from Visualization.colors import WHITE, LIGHT_GRAY, GRAY
+from Visualization.colors import LIGHT_GRAY, GRAY
 from Visualization.settings import SCREEN, BORDER, FONT
 
 
