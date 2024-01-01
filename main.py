@@ -1,7 +1,9 @@
+# By Trevor Buchanan
+# Visualization inspired by Sebastian Lague (https://www.youtube.com/watch?v=hfMk-kjRv4c&t=2378s)
+
 import pygame
 import pygame_widgets
 
-from Visualization.auto_visualization import AutoVisualization
 from Visualization.settings import FPS
 from Visualization.manual_visualization import ManualVisualization
 
