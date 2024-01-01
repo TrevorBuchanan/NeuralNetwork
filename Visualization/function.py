@@ -1,8 +1,8 @@
 import pygame
 
 import utility
-from colors import WHITE, LIGHTER_GRAY
-from settings import SCREEN, BORDER
+from Visualization.colors import WHITE, LIGHTER_GRAY
+from Visualization.settings import SCREEN, BORDER
 
 
 class Function:

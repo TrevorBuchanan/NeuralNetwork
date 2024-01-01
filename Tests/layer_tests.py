@@ -1,7 +1,7 @@
 import math
 import unittest
 
-from layer import Layer
+from NeuralNet.layer import Layer
 
 
 class LayerTests(unittest.TestCase):

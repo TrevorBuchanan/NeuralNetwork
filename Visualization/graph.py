@@ -1,7 +1,7 @@
 import pygame
 
-from colors import WHITE, LIGHT_GRAY, GRAY
-from settings import SCREEN, BORDER, FONT
+from Visualization.colors import WHITE, LIGHT_GRAY, GRAY
+from Visualization.settings import SCREEN, BORDER, FONT
 
 
 class Graph:

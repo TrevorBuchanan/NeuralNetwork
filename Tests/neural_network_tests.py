@@ -1,7 +1,6 @@
-import math
 import unittest
 
-from neuralnetwork import NeuralNet
+from NeuralNet.neuralnetwork import NeuralNet
 
 
 class NeuralNetworkTests(unittest.TestCase):

@@ -2,8 +2,8 @@ import random
 
 import pygame
 
-from colors import LIGHT_RED, LIGHT_BLUE
-from settings import WIDTH, HEIGHT, SCREEN
+from Visualization.colors import LIGHT_RED, LIGHT_BLUE
+from Visualization.settings import WIDTH, HEIGHT, SCREEN
 from utility import is_under_func
 
 
