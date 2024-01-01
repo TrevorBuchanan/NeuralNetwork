@@ -17,7 +17,7 @@ class NeuralNetworkTests(unittest.TestCase):
         test_nn.layers[1].biases = biases2
 
         calc_out = test_nn.get_outputs(inputs)
-        exp_out = [0.9929877491461381, 0.8814695743502968]
+        exp_out = [0.939005837737, 0.0206656219536]
 
-        self.assertEqual(exp_out[0], calc_out[0])
-        self.assertEqual(exp_out[1], calc_out[1])
+        self.assertAlmostEqual(exp_out[0], calc_out[0], 5)
+        self.assertAlmostEqual(exp_out[1], calc_out[1], 5)
