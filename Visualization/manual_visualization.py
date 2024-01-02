@@ -2,6 +2,7 @@ import random
 
 from pygame_widgets.slider import Slider
 
+from NeuralNet.data_point import DataPoint
 from Visualization import fruit
 from Visualization.colors import DARK_GRAY, WHITE
 from Visualization.manual_nn import ManualNN
@@ -12,7 +13,7 @@ from Visualization.visualization import Visualization
 class ManualVisualization(Visualization):
     def __init__(self, num_fruits):
         super().__init__(num_fruits)
-        self.NN = ManualNN()
+        self.NN_control = ManualNN()
         self.sliders = []
         self.create_sliders(17)
 
@@ -43,14 +44,14 @@ class ManualVisualization(Visualization):
         fruit.draw_fruits(self.fruits)
 
         # Draw NN visualization
-        self.NN.visualize()
+        self.NN_control.visualize()
 
         # Get weights and biases from sliders and set the corresponding weights and biases in the neural network
-        self.NN.set_weights([self.sliders[0].value, self.sliders[1].value, self.sliders[2].value,
-                             self.sliders[3].value, self.sliders[4].value, self.sliders[5].value,
-                             self.sliders[9].value, self.sliders[10].value, self.sliders[11].value,
-                             self.sliders[12].value, self.sliders[13].value, self.sliders[14].value])
-        self.NN.set_biases(
+        self.NN_control.set_weights([self.sliders[0].value, self.sliders[1].value, self.sliders[2].value,
+                                    self.sliders[3].value, self.sliders[4].value, self.sliders[5].value,
+                                    self.sliders[9].value, self.sliders[10].value, self.sliders[11].value,
+                                    self.sliders[12].value, self.sliders[13].value, self.sliders[14].value])
+        self.NN_control.set_biases(
             [self.sliders[6].value, self.sliders[7].value, self.sliders[8].value, self.sliders[15].value,
              self.sliders[16].value])
 
@@ -64,6 +65,10 @@ class ManualVisualization(Visualization):
         text = FONT.render("Biases", True, WHITE)
         SCREEN.blit(text, [10, 430])
 
-        cost = round(0, 3)
+        cost = round(self.get_cost(), 3)
         text = FONT.render(f"Cost: {cost}", True, WHITE)
-        SCREEN.blit(text, [BORDER.width - 150, BORDER.height - 50])
+        SCREEN.blit(text, [BORDER.width - 150, BORDER.height - 70])
+
+        correct = self.get_correct()
+        text = FONT.render(f"Correct: {correct}", True, WHITE)
+        SCREEN.blit(text, [BORDER.width - 150, BORDER.height - 40])
